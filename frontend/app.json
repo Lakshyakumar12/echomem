@@ -1,0 +1,26 @@
+{
+  "expo": {
+    "name": "EchoMem v2",
+    "slug": "echomem-v2",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#0A0A0F",
+    "android": {
+      "package": "com.aiecho.echomemv2",
+      "adaptiveIcon": {
+        "backgroundColor": "#0A0A0F"
+      }
+    },
+    "ios": {
+      "bundleIdentifier": "com.aiecho.echomemv2",
+      "supportsTablet": false
+    },
+    "web": {
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-status-bar"
+    ]
+  }
+}
