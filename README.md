@@ -75,7 +75,57 @@ INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
 INFO:     Started reloader process
 ```
 
+### Step 3 — Frontend Setup (Expo Go)
 
+#### Option A: Fresh Expo project (recommended)
+
+```bash
+# In a new terminal
+npx create-expo-app echomem-frontend --template blank
+cd echomem-frontend
+
+# Replace the generated App.js with ours
+copy d:\anti\echomem_v2\frontend\App.js .\App.js
+
+# Start Expo
+npx expo start
+```
+
+#### Option B: Use the provided frontend folder directly
+
+```bash
+cd d:\anti\echomem_v2\frontend
+npm install
+npx expo start
+```
+
+#### Set API_BASE (IMPORTANT for physical devices)
+
+Open `App.js` line 28 and update:
+```javascript
+//  Wrong for physical device:
+const API_BASE = 'http://localhost:8000';
+
+// Correct — use your machine's local network IP:
+const API_BASE = 'http://192.168.1.45:8000';  // example
+```
+
+**Find your IP:**
+```powershell
+ipconfig   # look for "IPv4 Address" under your Wi-Fi adapter
+```
+
+> Your phone and computer must be on the **same Wi-Fi network**.
+
+---
+
+### Step 4 — Scan QR Code in Expo Go
+
+1. Install **Expo Go** on your phone (iOS App Store / Google Play)
+2. Scan the QR code shown in the terminal / browser after `npx expo start`
+3. The app will load on your device immediately
+
+---
 
 ---
 ## Core Architecture
